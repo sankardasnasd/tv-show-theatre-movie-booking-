@@ -1,0 +1,67 @@
+{% extends 'user/user_home_index.html' %}
+{% block body %}
+
+    <form method="post" action="/tvshow_app/view_tv_shows_post/" enctype="multipart/form-data">
+{% csrf_token %}
+    <br>
+    <br>
+  <section class="w3l-about py-5" id="about">
+    <div class="container py-md-5 py-2 bg-light">
+<table class="pull-left">
+
+<tr>
+
+        <td><input type="search"  name="search" class="form-control" value="search"></td>
+
+    <td><input type="submit" value="search" class="btn btn-success"></td>
+
+    </tr>
+</table>
+    </div>
+  </section>
+
+
+    <br>
+    <br>
+
+
+{% for i in var %}
+    <section class="w3l-about py-5" id="about">
+    <div class="container py-md-5 py-2 bg-light">
+        <div class="row w3l-row">
+            <div class="col-lg-6 w3l-image pe-lg-5 mb-lg-0 mb-md-5 mb-4">
+                <img src="{{ i.image }}" alt="" class="img-fluid">
+
+            </div>
+            <div class="col-lg-6 w3l-about-info px-lg-4 align-center bg-light">
+                <h1 class="w3l-title-main text-center text-dark text-uppercase">{{ i.name }}</h1><hr>
+                <h3 class="  text-center text-dark text-uppercase">{{ i.CATEGORY.category_name }}</h3>
+                <p class="  text-dark text-uppercase">DURATION :&nbsp;{{ i.duration }}</p>
+                <p class="  text-dark text-uppercase">DATE :&nbsp;{{ i.Date}}</p>
+                <p class="  text-dark text-uppercase">TIME :&nbsp;{{ i.from_time}}</p>
+                                <p class="  text-dark text-uppercase">LANGUAGE :&nbsp;{{ i.language}}</p>
+                                <p class="  text-dark text-uppercase">CHANNEL NAME:&nbsp;{{ i.channelname }}</p>
+                                <p class=" text-dark text-uppercase">ACTOR NAME:&nbsp;{{ i.actors_name }}</p>
+                                <p class=" text-dark text-uppercase">ACTRESS NAME:&nbsp;{{ i.actress_name }}</p>
+                                <p class=" text-dark text-uppercase">PRODUCER NAME:&nbsp;{{ i.producer_name }}</p>
+                                <p class=" text-dark text-uppercase ">DIRECTOR NAME:&nbsp;{{ i.director_name }}</p>
+                                <div class="text-dark text-uppercase text-break d-inline" >DESCRIPTION :{{ i.description }}</div>
+
+
+
+                <div class="w3l-btn">
+                    <a href="{{ i.demo_video }}" class="btn btn-style btn-secondary mt-lg-5 mt-4 me-2">View Video </a><br>
+                    <div class="my-3">
+                    <a href="/tvshow_app/sent_review/{{ i.id }}#abc" class="btn btn-outline-danger" >review</a></th>
+                    <a href="/tvshow_app/user_view_review/{{ i.id }}#abc" class="btn btn-warning">view review</a>
+                    </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+    {% endfor %}
+
+ </form>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'user/user_home_index.html' %}
+{% block body %}
+
+    <form method="post" action="/tvshow_app/view_tv_shows_post/" enctype="multipart/form-data">
+{% csrf_token %}
+    <br>
+    <br>
+  <section class="w3l-about py-5" id="about">
+    <div class="container py-md-5 py-2 bg-light">
+<table class="pull-left">
+
+<tr>
+
+        <td><input type="search"  name="search" class="form-control" value="search"></td>
+
+    <td><input type="submit" value="search" class="btn btn-success"></td>
+
+    </tr>
+</table>
+    </div>
+  </section>
+
+
+    <br>
+    <br>
+
+
+{% for i in data %}
+    <section class="w3l-about py-5" id="about">
+    <div class="container py-md-5 py-2 bg-light">
+        <div class="row w3l-row">
+            <div class="col-lg-6 w3l-image pe-lg-5 mb-lg-0 mb-md-5 mb-4">
+                <img src="{{ i.show.image }}" alt="" class="img-fluid">
+
+            </div>
+            <div class="col-lg-6 w3l-about-info px-lg-4 align-center bg-light">
+                <h1 class="w3l-title-main text-center text-dark text-uppercase">{{ i.show.name }} Rate: {{ i.rating }}</h1><hr>
+                <h3 class="  text-center text-dark text-uppercase">{{ i.show.CATEGORY.category_name }}</h3>
+                <p class="  text-dark text-uppercase">DURATION :&nbsp;{{ i.show.duration }}</p>
+                <p class="  text-dark text-uppercase">DATE :&nbsp;{{ i.show.Date}}</p>
+                <p class="  text-dark text-uppercase">TIME :&nbsp;{{ i.show.from_time}}</p>
+                                <p class="  text-dark text-uppercase">LANGUAGE :&nbsp;{{ i.show.language}}</p>
+                                <p class="  text-dark text-uppercase">CHANNEL NAME:&nbsp;{{ i.show.channelname }}</p>
+                                <p class=" text-dark text-uppercase">ACTOR NAME:&nbsp;{{ i.show.actors_name }}</p>
+                                <p class=" text-dark text-uppercase">ACTRESS NAME:&nbsp;{{ i.show.actress_name }}</p>
+                                <p class=" text-dark text-uppercase">PRODUCER NAME:&nbsp;{{ i.show.producer_name }}</p>
+                                <p class=" text-dark text-uppercase ">DIRECTOR NAME:&nbsp;{{ i.show.director_name }}</p>
+                                <div class="text-dark text-uppercase text-break d-inline" >DESCRIPTION :{{ i.show.description }}</div>
+
+
+
+
+        </div>
+    </div>
+</section>
+    {% endfor %}
+
+ </form>
+{% endblock %}

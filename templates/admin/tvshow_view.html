@@ -1,0 +1,184 @@
+{% extends 'admin/tvshow_home.html' %}
+
+
+{% block body %}
+
+    <form method="post" action="/tvshow_app/tvshow_view_post/" enctype="multipart/form-data">
+{% csrf_token %}
+    <br>
+    <br>
+  <section class="w3l-about py-5" id="about">
+    <div class="container py-md-5 bg-light">
+<table class="pull-left">
+
+<tr>
+
+        <td><input type="search"  name="search" class="form-control" value="search"></td>
+
+    <td><input type="submit" value="search" class="btn btn-success"></td>
+
+    </tr>
+</table>
+    </div>
+  </section>
+
+
+    <br>
+    <br>
+
+
+{% for i in var %}
+    <section class="w3l-about py-5" id="about">
+    <div class="container py-md-5 py-2 bg-light">
+        <div class="row w3l-row">
+            <div class="col-lg-6 w3l-image pe-lg-5 mb-lg-0 mb-md-5 mb-4">
+                <img src="{{ i.image }}" alt="" class="img-fluid">
+
+            </div>
+            <div class="col-lg-6 w3l-about-info px-lg-4 align-center bg-light">
+                <h1 class="w3l-title-main text-center text-dark text-uppercase">{{ i.name }}</h1><hr>
+                <h3 class="  text-center text-dark text-uppercase">{{ i.CATEGORY.category_name }}</h3>
+                <p class="  text-dark text-uppercase">DURATION :&nbsp;{{ i.duration }}</p>
+                <p class="  text-dark text-uppercase">DATE :&nbsp;{{ i.Date}}</p>
+                <p class="  text-dark text-uppercase">TIME :&nbsp;{{ i.from_time}}</p>
+                                <p class="  text-dark text-uppercase">LANGUAGE :&nbsp;{{ i.language}}</p>
+                                <p class="  text-dark text-uppercase">CHANNEL NAME:&nbsp;{{ i.channelname }}</p>
+                                <p class=" text-dark text-uppercase">ACTOR NAME:&nbsp;{{ i.actors_name }}</p>
+                                <p class=" text-dark text-uppercase">ACTRESS NAME:&nbsp;{{ i.actress_name }}</p>
+                                <p class=" text-dark text-uppercase">PRODUCER NAME:&nbsp;{{ i.producer_name }}</p>
+                                <p class=" text-dark text-uppercase ">DIRECTOR NAME:&nbsp;{{ i.director_name }}</p>
+                                <div class="text-dark text-uppercase text-break d-inline" >DESCRIPTION :{{ i.description }}</div>
+
+
+
+                <div class="w3l-btn">
+                    <br>
+
+                    <table>
+                        <tr>
+                             <td class="text-dark bg-light"><a href="/tvshow_app/tv_show_edit/{{ i.id }}#abc" class="btn btn-success">Edit</a> </td>
+                             <td class="text-dark bg-light"><a href="/tvshow_app/tv_show_delete/{{ i.id }}" class="btn btn-danger">Delete</a> </td>
+                             <td class="text-dark bg-light"><a href="/tvshow_app/view_review/{{ i.id }}#abc" class="btn btn-info">Reviews</a> </td>
+                        </tr>
+                    </table>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+    {% endfor %}
+
+ </form>
+{% endblock %}
+
+
+
+
+{#{% block body %}#}
+{##}
+{#<style>#}
+{#table {#}
+{#  border-collapse: collapse;#}
+{#  border-spacing: 0;#}
+{#  width: 100%;#}
+{#  border: 2px solid #ddd;#}
+{#}#}
+{##}
+{#table,th, td {#}
+{#  text-align: left;#}
+{#  padding: 8px;#}
+{#}#}
+{##}
+{##}
+{#tr:nth-child(even){}#}
+{#</style>#}
+{##}
+{##}
+{#<div class="container ">#}
+{#<h1 class="text-center text-danger font-weight-bold my-4">View Show</h1><hr>#}
+{##}
+{#<div class="p-3 my-3">#}
+{#<form method="post" action="/tvshow_app/tvshow_view_post" enctype="multipart/form-data">#}
+{#{% csrf_token %}#}
+{##}
+{##}
+{#<input type="search" value="search" name="search" class="form-control">#}
+{##}
+{#    <div class="text-center">#}
+{##}
+{#        <input type="submit" value="search" class="btn btn-success my-3 col-4">#}
+{#</div>#}
+{##}
+{#</div>#}
+{##}
+{##}
+{##}
+{#<div style="overflow-x:auto;">#}
+{#  <table border="1px solid black" class="table">#}
+{#    <tr>#}
+{#        <th scope="col" class="text-light bg-dark">SL NO</th>#}
+{#          <th scope="col" class="text-light bg-dark">NAME</th>#}
+{#          <th scope="col" class="text-light bg-dark">CATEGORY</th>#}
+{#          <th scope="col" class="text-light bg-dark">TIME</th>#}
+{#          <th scope="col" class="text-light bg-dark">DATE</th>#}
+{#          <th scope="col" class="text-light bg-dark">DURATION</th>#}
+{#          <th scope="col" class="text-light bg-dark">LANGUAGE</th>#}
+{#          <th scope="col" class="text-light bg-dark">DESCRIPTION</th>#}
+{#          <th scope="col" class="text-light bg-dark">VIDEO</th>#}
+{#          <th scope="col" class="text-light bg-dark">IMAGE</th>#}
+{#          <th scope="col" class="text-light bg-dark">CHANNEL NAME</th>#}
+{#          <th scope="col" class="text-light bg-dark">ACTOR NAME</th>#}
+{#        <th scope="col" class="text-light bg-dark">ACTRESS NAME</th>#}
+{#        <th scope="col" class="text-light bg-dark">PRODUCER NAME</th>#}
+{#        <th scope="col" class="text-light bg-dark">DIRECTOR NAME</th>#}
+{#        <th scope="col" class="text-light bg-dark"></th>#}
+{#        <th scope="col" class="text-light bg-dark"></th>#}
+{#        <th scope="col" class="text-light bg-dark"></th>#}
+{##}
+{##}
+{##}
+{#     {% for i in var %}#}
+{#    <tr>#}
+{#         <td class="text-dark bg-light">{{ forloop.counter }}</td>#}
+{#          <td class="text-dark bg-light">{{ i.name }}</td>#}
+{#          <td class="text-dark bg-light">{{ i.CATEGORY.category_name }}</td>#}
+{#          <td class="text-dark bg-light">{{ i.from_time }}</td>#}
+{#          <td class="text-dark bg-light">{{ i.Date }}</td>#}
+{#          <td class="text-dark bg-light">{{ i.duration }}</td>#}
+{#          <td class="text-dark bg-light">{{ i.language}}</td>#}
+{#          <td class="text-dark bg-light">#}
+{#          <div style="width: 100px;" class="text-break">#}
+{#              {{ i.description }}#}
+{##}
+{#          </div>#}
+{#          </td>#}
+{#        <td class="text-dark bg-light"><video src="{{ i.demo_video}}" controls width="150px" height="150px"></video></td>#}
+{#        <td class="text-dark bg-light"><img src="{{ i.image }}" height="80px" width="80px"> </td>#}
+{#        <td class="text-dark bg-light">{{ i.channelname }}</td>#}
+{#          <td class="text-dark bg-light">{{ i.actors_name }}</td>#}
+{#        <td class="text-dark bg-light">{{ i.actress_name }}</td>#}
+{#        <td class="text-dark bg-light">{{ i.producer_name}}</td>#}
+{#        <td class="text-dark bg-light">{{ i.director_name}}</td>#}
+{#        <td class="text-dark bg-light"><a href="/tvshow_app/tv_show_delete/{{ i.id }}" class="btn btn-danger">delete</a> </td>#}
+{#        <td class="text-dark bg-light"><a href="/tvshow_app/tv_show_edit/{{ i.id }}#abc" class="btn btn-success">update</a> </td>#}
+{#        <td class="text-dark bg-light"><a href="/tvshow_app/view_review/{{ i.id }}#abc" class="btn btn-info">reviews</a> </td>#}
+{##}
+{#    </tr>#}
+{#{% endfor %}#}
+{##}
+{#  </table>#}
+{#</div>#}
+{#    </div>#}
+{#</div>#}
+{#    </form>#}
+{##}
+{##}
+{##}
+{##}
+{#{% endblock %}#}
+{##}
+{##}
+{##}
+{##}
+{##}

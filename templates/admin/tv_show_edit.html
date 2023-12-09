@@ -1,0 +1,40 @@
+{% extends 'admin/tvshow_home.html' %}
+{% block body %}
+ <div class="row">
+ <h2 class="text-center my-3">Update Show</h2><hr>
+  <div class="mx-auto col-10 col-md-8 col-lg-6">
+    <div class="container p-3 my-3">
+<form method="post" action="/tvshow_app/tv_show_edit_post/" enctype="multipart/form-data">
+{% csrf_token %}
+    <label>select your category :</label>
+    <select name="category" class="form-control col-6">
+{% for i in var2 %}
+       <option value="{{ i.id }}" >{{ i.category_name}}</option>
+{% endfor %}
+    </select><br>
+<input type="hidden" name="id" value="{{ var.id }}">
+    <input type="text" placeholder="tv show name" name="name" value="{{ var.name }}"  class="form-control col-6"><br>
+
+    <input type="text" name="time" value="{{ var.from_time }}"  class="form-control col-6"><br>
+        <input type="date" name="date"  value="{{ var.Date|date:'Y-m-d'}}"  class="form-control col-6"><br>
+    <input type="text" placeholder="tv show duration" name="duration"  value="{{ var.duration  }}"  class="form-control col-6"><br>
+    <input type="text" placeholder="tv show language" name="language"  value="{{ var.language }}"  class="form-control col-6"><br>
+    <textarea placeholder="tv show description" name="description"  class="form-control col-6">{{ var.description }}</textarea><br>
+        <input type="text" placeholder="tv show channelname" name="channelname"  value="{{ var.channelname }}"  class="form-control col-6"><br>
+     <input type="text" placeholder="tv show actors_name" name="actors_name"  value="{{ var.actors_name }}"  class="form-control col-6"><br>
+     <input type="text" placeholder="tv show actress_name" name="actress_name"  value="{{ var.actress_name }}"  class="form-control col-6"><br>
+     <input type="text" placeholder="tv show producer_name" name="producer_name"  value="{{ var.producer_name}}"  class="form-control col-6"><br>
+     <input type="text" placeholder="tv show director_name" name="director_name"  value="{{ var.director_name }}"  class="form-control col-6"><br>
+
+    <input type="file" placeholder="tv show demo_video" name="video"   class="form-control col-6"><br>
+<video src="{{ var.demo_video}}" controls width="10%" height="20%"></video><br>
+
+    <input type="file" placeholder="tv show image" name="image"  class="form-control col-6"><br>
+<img src="{{ var.image }}"  width="20%" height="20%"><br>
+       <input type="submit" value="submit"  class="form-control btn btn-success">
+</form>
+    </div>
+  </div>
+ </div>
+{% endblock %}
+

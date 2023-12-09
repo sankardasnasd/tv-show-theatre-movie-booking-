@@ -1,0 +1,217 @@
+{% extends 'admin/tvshow_home.html' %}
+{% block body %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+
+
+<div class="container ">
+<h1 class="text-center text-danger font-weight-bold my-4">ADD SHOW</h1><hr>
+    <div class="border my-4">
+{#    <div class="mx-auto col-10 col-md-8 col-lg-6">#}
+{#    <div class="container p-3 my-3">#}
+<div class="row p-3">
+  <div class="col-75">
+    <div class="container">
+
+
+
+
+      <form method="post" action="/tvshow_app/tv_shows_post/" enctype="multipart/form-data">
+{% csrf_token %}
+
+
+        <div class="col-12">
+
+        </div><hr>
+            <div class="row p-3">
+          <div class="col-50">
+              <label>CHOOSE CATEGORY</label>
+              <select name="category" class="form-control col-6">
+        {% for i in var %}
+
+         <option value="{{ i.id }}"  >{{ i.category_name }}</option>
+        {% endfor %}
+          </select><br>
+
+          <div class="col-lg-12 my-3">
+            <div class="form-group">
+                <label for="fname" ><i class=""></i>SHOW NAME</label>
+            <input type="text" id="fname"  placeholder="tv show name" name="name"  required >
+            </div>
+
+          </div>
+              <div class="row">
+                <div class="col-50">
+                 <label for="email"><i ></i> TIME</label>
+                 <input type="text" id="email"  name="time" placeholder="select time" class=" form-control col-6" required>
+              </div>
+
+                <div class="col-50">
+                 <label for="adr"><i></i> DATE</label>
+            <input type="date" id="adr"  name="date" placeholder="" class=" form-control col-6" required>
+              </div>
+
+                <div class="col-50">
+                 <label CLASS="">DESCRIPTION</label>
+              <textarea class="form-control" cols="12" placeholder="tv show description" name="description" required></textarea>
+              </div>
+
+
+                <div class="col-50">
+                <label for="cname">CHANNEL NAME</label>
+                <input type="text" id="cname" placeholder="tv show channelname" name="channelname"  required>
+              </div>
+
+
+              <div class="col-50">
+                <label for="state" >LANGUAGE</label>
+                <input type="text" id="state"placeholder="tv show language" name="language" required>
+              </div>
+              <div class="col-50">
+                <label for="zip">DURATION</label>
+                <input type="text" id="zip"    placeholder="tv show duration" name="duration" required>
+              </div>
+
+              <div class="col-50">
+                 <label for="ccnum">ACTOR NAME</label>
+            <input type="text" id="ccnum" placeholder="tv show actors_name" name="actors_name" required>
+              </div>
+              <div class="col-50">
+               <label for="expmonth">ACTERSS NAME</label>
+            <input type="text"  placeholder="tv show actress_name" name="actress_name"  required>
+              </div>
+
+
+          <div class="col-50">
+                 <label for="expmonth">PRODUCER NAME</label>
+            <input type="text" placeholder="tv show producer_name" name="producer_name"  required >
+              </div>
+              <div class="col-50">
+                <label for="expmonth">DIRECTOR NAME</label>
+            <input type="text"  placeholder="tv show director_name" name="director_name" >
+              </div>
+          <div class="col-50">
+                  <label for="expmonth">VIDEO</label>
+           <input type="file" placeholder="tv show demo_video" name="video" class=" form-control col-6" required><br>
+              </div>
+              <div class="col-50">
+               <label for="expmonth">IMAGE</label>
+              <input type="file" placeholder="tv show image" name="image" class=" form-control col-6" required><br>
+
+              </div>
+
+           <div class="col-50">
+
+              </div>
+
+            </div>
+          <input type="checkbox" checked="checked" name="sameadr" class="">
+        </label>
+        <input type="submit" value="submit" class="btn">
+          </div>
+      </form>
+  </div>
+
+
+</div>
+</div>
+</div>
+</div>
+    </div>
+
+
+{% endblock %}

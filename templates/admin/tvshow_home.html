@@ -1,0 +1,291 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tv show</title>
+
+    <!-- google-fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- //google-fonts -->
+
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="/static/tvshow/assets/css/style-liberty.css">
+
+</head>
+
+<body>
+
+<!-- top header -->
+
+<!-- //top header -->
+
+<!--header-->
+<header id="site-header" class="fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg stroke">
+            <h1>
+                <a class="navbar-brand" href="index.html">
+                    <span class="fa fa-lightbulb">Tv</span>
+                </a>
+            </h1>
+
+            <button class="navbar-toggler collapsed bg-gradient" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ms-lg-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/tvshow_app/admin_home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tvshow_app/category#abc">Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tvshow_app/tv_shows#abc">TvShow</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tvshow_app/view_user#abc">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tvshow_app/admin_change_password#abc">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tvshow_app/view_complaints#abc">View complaints</a>
+                    </li>
+
+
+
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tvshow_app/category_view#abc">Category View</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tvshow_app/tvshow_view#abc">View Tv Show</a>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tvshow_app/logout">Logout</a>
+                    </li>
+
+
+
+
+
+
+                    <!--/search-right-->
+
+                    <!--//search-right-->
+                </ul>
+            </div>
+
+            <!-- toggle switch for light and dark theme -->
+            <div class="cont-ser-position">
+                <nav class="navigation">
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox">
+                            <div class="mode-container">
+                                <i class="gg-sun"></i>
+                                <i class="gg-moon"></i>
+                            </div>
+                        </label>
+                    </div>
+                </nav>
+            </div>
+            <!-- //toggle switch for light and dark theme -->
+        </nav>
+    </div>
+</header>
+<!--//header-->
+
+
+
+
+<!-- banner section -->
+<section id="home" class="w3l-banner py-5">
+    <div class="container py-lg-5 py-md-4">
+        <div class="py-lg-5 py-4">
+            <div class="banner-info-grid">
+                <h3 class="mb-4"><sup>the</sup> Best Shows</h3>
+                <p>Explore and enjoy your favourites.</p>
+                <div class="col-4">
+                   <a class="btn btn-secondary btn-style me-2" href="/tvshow_app/tvshow_view#abc"> View  Now </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //banner section -->
+
+
+
+
+
+
+<!-- //Why Choose Us Section-->
+<div id="abc">
+
+    {% block body %}
+        <div class="card" >
+        </div>
+
+    {% endblock %}
+</div>
+
+
+
+
+
+
+
+<!-- footer block -->
+<footer class="w3l-footer-29-main">
+
+            <!-- copyright -->
+            <p class="copy-footer-29 text-center mt-5 pb-2">© 2022 Intelligence. All rights reserved.
+                by <a href="" target="_blank">TV shows</a></p>
+            <!-- //copyright -->
+        </div>
+    </div>
+</footer>
+<!-- //footer block -->
+
+
+
+
+<!-- Js scripts -->
+<!-- move top -->
+<button onclick="topFunction()" id="movetop" title="Go to top">
+    <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+</button>
+<script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("movetop").style.display = "block";
+        } else {
+            document.getElementById("movetop").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<!-- //move top -->
+
+<!-- common jquery plugin -->
+<script src="/static/tvshow/assets/js/jquery-3.3.1.min.js"></script>
+<!-- //common jquery plugin -->
+
+<!-- theme switch js (light and dark)-->
+<script src="/static/tvshow/assets/js/theme-change.js"></script>
+<!-- //theme switch js (light and dark)-->
+
+<!--/stats-number-counter-->
+<script src="/static/tvshow/assets/js/jquery.waypoints.min.js"></script>
+<script src="/static/tvshow/assets/js/jquery.countup.js"></script>
+<script>
+    $('.counter').countUp();
+
+</script>
+<!--//stats-number-counter-->
+
+<!--/owlcarousel-->
+<script src="/static/tvshow/assets/js/owl.carousel.js"></script>
+<!-- //tesimonials-->
+<script>
+    $(document).ready(function() {
+        $("#owl-demo1").owlCarousel({
+            loop: true,
+            nav: false,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                736: {
+                    items: 1,
+                    nav: false
+                }
+            }
+        })
+    })
+
+</script>
+<!-- //tesimonials-->
+
+<!-- MENU-JS -->
+<script>
+    $(window).on("scroll", function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+            $("#site-header").addClass("nav-fixed");
+        } else {
+            $("#site-header").removeClass("nav-fixed");
+        }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+        $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+        if ($(window).width() > 991) {
+            $("header").removeClass("active");
+        }
+        $(window).on("resize", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+        });
+    });
+</script>
+<!-- //MENU-JS -->
+
+<!-- disable body scroll which navbar is in active -->
+<script>
+    $(function () {
+        $('.navbar-toggler').click(function () {
+            $('body').toggleClass('noscroll');
+        })
+    });
+</script>
+<!-- //disable body scroll which navbar is in active -->
+
+<!--bootstrap-->
+<script src="/static/tvshow/assets/js/bootstrap.min.js"></script>
+<!-- //bootstrap-->
+<!-- //Js scripts -->
+
+</body>
+
+</html>

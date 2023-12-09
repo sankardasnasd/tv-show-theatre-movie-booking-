@@ -1,0 +1,59 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title></title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <!-- //Meta tag Keywords -->
+    <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="/static/login/css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+    <link rel="stylesheet" href="/static/login/css/font-awesome.min.css" type="text/css" media="all">
+
+</head>
+
+<body>
+    <div class="w3l-signinform">
+        <!-- container -->
+        <div class="wrapper">
+            <!-- main content -->
+            <div class="w3l-form-info">
+                <div class="w3_info">
+                    <h1>Welcome TV show</h1>
+                    <p class="sub-para"></p>
+                    <h1>Log In</h1>
+                    <form action="/tvshow_app/login_post/" method="post">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <input type="text" placeholder="Email or Username" required="" name="username"  style="color: white">
+                        </div>
+                        <div class="input-group two-groop ">
+                            <span><i class="fa fa-key" aria-hidden="true"></i></span>
+                            <input type="Password" placeholder="Password" required="" name="password" style="color: white">
+                        </div>
+
+                        <button class="btn btn-primary btn-block" type="submit">Log In</button>
+                    </form>
+                
+                    <p class="account">Don't have an account? <a href="/tvshow_app/signup" style="color: lightgoldenrodyellow">Register</a></p>
+                <p class="account"> <a href="/tvshow_app/forget_password/ " class="btn btn-danger">Forget Password?</a></p>
+                </div>
+            </div>
+            <!-- //main content -->
+        </div>
+        <!-- //container -->
+        <!-- footer -->
+
+    </div>
+
+</body>
+
+</html>

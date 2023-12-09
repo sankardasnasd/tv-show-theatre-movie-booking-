@@ -1,0 +1,30 @@
+
+<form method="post" action="/tvshow_app/signup_post/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="name" required>
+<input type="text" name="house_name" required>
+<input type="text" name="post_name" required>
+<input type="text" name="landmark" required>
+<input type="text" name="street_name" required>
+<input type="text" name="district" required>
+<input type="email" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="password">
+<input type="number" name="phone">
+<div class="form-group">
+    <div class="maxl">
+        <label class="radio inline">
+            <input type="radio" name="gender" value="male" >
+            <span> Male </span>
+        </label>
+        <label class="radio inline">
+            <input type="radio" name="gender" value="female">
+            <span>Female </span>
+        </label>
+    </div>
+</div>
+<input type="file" name="file">
+    <input type="submit">
+
+</form>
+
+

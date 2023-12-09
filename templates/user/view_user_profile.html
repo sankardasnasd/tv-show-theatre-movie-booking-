@@ -1,0 +1,129 @@
+{% extends 'user/user_home_index.html' %}
+{% block body %}
+
+
+
+
+   <section style="background-color: #eee;">
+ <div class="container py-5">
+
+
+    <div class="row p-3">
+
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="{{ var.image }}" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;">
+            <h5 class="my-3 text-dark">{{ var.name }}</h5>
+              <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0 text-dark">ADRESS </p>
+              </div>
+              <div class="col-sm-9">
+                <p class=" mb-0 text-dark"> <th>{{ var.house_name }}</th></p>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+        <div class="card mb-4 mb-lg-0">
+          <div class="card-body p-0">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="card mb-2">
+          <div class="card-body">
+              <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0 text-dark" >Gender</p>
+              </div>
+              <div class="col-sm-9">
+                <p class=" mb-0 text-dark">{{ var.gender }}</p>
+              </div>
+            </div>
+            <hr>
+
+
+
+<div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0 text-dark">PHONE</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="mb-0 text-dark">{{ var.phone }}</p>
+              </div>
+
+
+              <hr>
+
+
+
+
+              <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0 text-dark">Street Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="mb-0 text-dark">{{ var.street_name }}</p>
+              </div>
+
+
+
+            </div>
+              <hr>
+    <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0 text-dark">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="mb-0 text-dark">{{ var.email }}</p>
+              </div>
+        <hr>
+
+
+
+            </div>
+               <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0 text-dark">Land Mark</p>
+              </div>
+              <div class="col-sm-9">
+                <p class=" mb-0 text-dark">{{ var.landmark }}</p>
+              </div>
+            </div>
+            <hr>
+              <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0 text-dark">Post</p>
+              </div>
+              <div class="col-sm-9">
+                <p class=" mb-0 text-dark">{{ var.post_name }}</p>
+              </div>
+            </div>
+            <hr>
+               <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0 text-dark">District</p>
+              </div>
+              <div class="col-sm-9">
+                <p class=" mb-0 text-dark">{{ var.district }}</p>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'user/user_home_index.html' %}
+{% block body %}
+<div>
+ <div class="row">
+  <div class="mx-auto col-10 col-md-8 col-lg-6 my-3">
+      <h2 class="text-center">SENT REVIEW</h2>
+<form action="/tvshow_app/sent_review_post/" method="post">
+    {% csrf_token %}
+    <input type="hidden" value="{{ id }}" name="rid" class="my-3" >
+    <textarea  name="review" placeholder="Type your review here" class="form-control" required></textarea>
+    <input type="submit"  class="form-control btn btn-success my-3" value="submit" >
+
+</form>
+  </div></div></div>
+{% endblock %}
+

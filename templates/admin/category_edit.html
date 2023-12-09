@@ -1,0 +1,24 @@
+{% extends 'admin/tvshow_home.html' %}
+{% block body %}
+
+    <div class="row" >
+  <div class="mx-auto col-10 col-md-8 col-lg-6">
+<div class="py-3">
+    <h1 class="text-center text-primary my-4">UPDATE</h1><hr>
+    <table border="1px" class="table">
+
+    <form method="post" action="/tvshow_app/category_edit_post/ ">
+        {% csrf_token %}
+
+        <input type="hidden" name="id" value="{{ var.id }}">
+        <input type="text" name="cate" placeholder="enter your category" value="{{ var.category_name }}" class="form-control">
+        <input type="submit" value="update" class="form-control btn btn-success my-4">
+
+        </form>
+
+</table>
+</div>
+  </div>
+    </div>
+{% endblock %}
+
